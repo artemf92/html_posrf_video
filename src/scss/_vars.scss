@@ -1,0 +1,99 @@
+// если вы хотите использовать sass-переменные - удалите root
+// colors
+:root {
+  // base
+  --font-family: "Inter", sans-serif;
+  --content-width: 1180px;
+  --container-offset: 20px;
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // colors
+  --color-light: #fff;
+  --color-black: #231A14;
+  --color-gray: #AEB0B5;
+  --color-red: #F00;
+  --color-base: #922898;
+  --color-primary: #4F74A4;
+  --color-hover: #E2DFE2;
+  --color-form: #C1CBDC;
+  --bg-form-blue: #35639F;
+  --bg-form-gray: #A8A8A8;
+  --bg-banner: #E5D6BF;
+  --bg-cards: #F2F0F2;
+  --bg-form-select: #E7E7E7;
+  --bg-form-file: #C1CBDC;
+  --border-radius-md: 10px;
+  --transition-delay: .3s;
+  --transition-function: cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  --box-shadow: 0 4px 4px rgba(217 210 210 / 30%);
+  --margin-sm: 20px;
+  --margin-md: 30px;
+  --margin-lg: 50px;
+  --section-margin: 200px;
+  --swiper-pagination-bullet-width: 14px;
+  --swiper-pagination-bullet-height: 14px;
+  --swiper-pagination-color: var(--color-primary);
+  --swiper-pagination-bullet-inactive-color: var(--bg-banner);
+}
+
+.fancybox__container {
+  // --fancybox-color: #dbdbdb;
+  // --fancybox-hover-color: #fff;
+  --fancybox-bg: rgba(0 0 0 / 46%);
+
+  // --fancybox-slide-gap: 10px;
+  // --f-spinner-width: 50px;
+  // --f-spinner-height: 50px;
+  // --f-spinner-color-1: rgba(255, 255, 255, 0.1);
+  // --f-spinner-color-2: #bbb;
+  // --f-spinner-stroke: 3.65;
+}
+
+.is-compact .fancybox__content > .f-button.is-close-btn {
+  // --f-button-border-radius: 50%;
+  // --f-button-color: #fff;
+  // --f-button-hover-color: #fff;
+  // --f-button-outline-color: #000;
+  --f-button-bg: transparent;
+  --f-button-active-bg: transparent;
+  --f-button-hover-bg: transparent;
+  --f-button-svg-width: 20px;
+  --f-button-svg-height: 20px;
+
+  right: 13px;
+
+  // --f-button-svg-filter: none;
+  top: 13px;
+}
+
+.fancybox__content > .f-button.is-close-btn {
+  right: 13px;
+  top: 13px;
+}
+
+@include tablet {
+  :root {
+    --section-margin: 100px;
+  }
+}
+
+@include small-tablet {
+  // :root {
+  //   --section-margin: 75px;
+  // }
+}
+
+@include mobile {
+  :root {
+    --container-offset: 10px;
+
+    // --section-margin: 50px;
+    --swiper-pagination-bullet-width: 10px;
+    --swiper-pagination-bullet-height: 10px;
+  }
+
+  .is-compact .fancybox__content > .f-button.is-close-btn {
+    right: 3px;
+    top: 3px;
+  }
+}

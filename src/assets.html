@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html')
+
+<body class="page__body">
+  <div class="site-container">
+    @include('partials/header.html')
+    <main class="main" style="background-color: #888;">
+      <div class="container">
+        <h1>H1 - Lorem ipsum dolor sit amet.</h1>
+        <h2>H2 - Lorem ipsum dolor sit amet.</h2>
+        <h3>H3 - Lorem ipsum dolor sit amet.</h3>
+        <button class="btn btn-secondary">Вызвать замерщика</button><br><br/>
+        <button class="btn btn-primary">Рассчитать стоимость</button><br><br/>
+        <button class="btn btn-attach"><svg>
+          <use xlink:href="img/sprite.svg#attach"></use>
+        </svg> Прикрепить файл</button><br><br/>
+        <button class="btn btn-icon"><svg class="">
+          <use xlink:href="img/sprite.svg#social-tg"></use>
+        </svg></button><br><br/>
+        <button class="btn btn-strict">Бизнес</button><br><br/>
+        <label class="custom-checkbox">
+          <input type="checkbox" class="custom-checkbox__field">
+          <span class="custom-checkbox__content"></span>
+        </label><br><br/>
+        <label class="custom-checkbox custom-checkbox--white">
+          <input type="checkbox" class="custom-checkbox__field">
+          <span class="custom-checkbox__content"></span>
+        </label><br><br/>
+      </div>
+    </main>
+    @include('partials/footer.html')
+    <!-- @include('html/h1.html') пример include -->
+  </div>
+</body>
+
+</html>

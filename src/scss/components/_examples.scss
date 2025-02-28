@@ -1,0 +1,143 @@
+.examples {
+  --examples-padding: 10px;
+
+  margin-bottom: var(--section-margin);
+
+  &__wrapper {
+    margin: auto;
+    padding: 0 var(--container-offset);
+    max-width: calc(2 * 8 * var(--examples-padding) + var(--content-width) + (2 * var(--container-offset)));
+  }
+
+  &__slider {
+    position: relative;
+    padding: 0 calc(8 * var(--examples-padding));
+  }
+
+  &__item {
+    display: flex;
+    gap: calc(2 * var(--examples-padding));
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+
+    // height: 100%;
+    justify-content: start;
+    margin-bottom: 34px;
+    border-radius: var(--border-radius-md);
+    padding: calc(4 * var(--examples-padding));
+    width: calc(50% - var(--examples-padding));
+    background-color: var(--bg-cards);
+    gap: calc(5 * var(--examples-padding));
+  }
+
+  &__name {
+    margin: 0;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 130%;
+  }
+
+  &__body {
+    flex-basis: 100%;
+  }
+
+  &__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: calc(5 * var(--examples-padding));
+  }
+
+  &__right {
+    width: calc(50% - var(--examples-padding));
+  }
+
+  &__pagination {
+    position: absolute;
+    z-index: 20;
+    text-align: center;
+
+    // top: calc(100% + 20px) !important;
+  }
+
+  &__image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 34px;
+    border-radius: var(--border-radius-md);
+    background-color: var(--bg-cards);
+  }
+
+  &__inner-slider {
+    z-index: 10;
+  }
+}
+
+
+@include tablet {
+  .examples {
+    &__item {
+      flex-direction: column-reverse;
+    }
+
+    &__image {
+      display: none;
+    }
+
+    &__left,
+    &__right {
+      width: 100%;
+    }
+  }
+}
+
+@include small-tablet {
+  .examples {
+    &__wrapper {
+      padding-right: 0;
+      padding-left: var(--examples-padding);
+    }
+
+    &__slide {
+      width: calc(100% - 10px);
+    }
+
+    &__left {
+      margin-bottom: 0;
+    }
+
+    &__right {
+      display: none;
+    }
+
+    &__slider {
+      padding: 0;
+    }
+  }
+}
+
+@include mobile {
+  .examples {
+    &__left {
+      padding: calc(3 * var(--examples-padding));
+      gap: calc(3 * var(--examples-padding));
+    }
+
+    &__bottom {
+      gap: calc(3 * var(--examples-padding));
+    }
+
+    &__name {
+      font-size: 20px;
+    }
+
+    .swiper-wrapper {
+      margin-bottom: 60px;
+    }
+  }
+}

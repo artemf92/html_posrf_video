@@ -1,0 +1,28 @@
+// базовые подключения
+@import "./mixins/checkbox";
+@import "./mixins/burger";
+@import "./mixins/breakpoint";
+@import "./mixins/tabs";
+@import "./components/form";
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения компонентов страницы
+@import "./components/header";
+@import "./components/hero";
+@import "./components/portfolio";
+@import "./components/consult";
+@import "./components/examples";
+@import "./components/steps";
+@import "./components/features";
+@import "./components/about";
+@import "./components/reviews";
+@import "./components/partners";
+@import "./components/map";
+@import "./components/blog";
+@import "./components/qna";
+@import "./components/callback";
+@import "./components/footer";
+@import "./components/calc";

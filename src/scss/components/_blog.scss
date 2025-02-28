@@ -1,0 +1,148 @@
+.blog {
+  margin-bottom: var(--section-margin);
+
+  &__slide {
+    max-width: 380px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
+  }
+
+  &__item-name {
+    margin-top: 0;
+    margin-bottom: 18px;
+  }
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    justify-self: end;
+    width: 100%;
+    max-width: 200px;
+  }
+
+  &__pagination {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+  }
+
+  &__prev,
+  &__next {
+    position: static;
+    display: inline-flex;
+    margin-top: 50px;
+    text-align: right;
+    transform: none;
+  }
+}
+
+.article {
+  &-modal {
+    p {
+      margin-top: 0;
+    }
+
+    &__images {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      margin-bottom: 30px;
+      gap: 20px;
+    }
+
+    &__desc {
+      overflow-y: scroll;
+      margin-bottom: 40px;
+      padding-right: 35px;
+      max-height: 323px;
+    }
+
+    &__footer {
+      display: flex;
+      flex-flow: row-reverse wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+  }
+}
+
+@include medium-desktop {
+  .blog {
+    &__slider {
+      padding-left: var(--container-offset);
+    }
+  }
+}
+
+@include small-tablet {
+  .article {
+    &-modal {
+      &__images {
+        position: relative;
+        display: block;
+        overflow: hidden;
+
+        img {
+          display: block;
+          margin: auto;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .blog {
+    padding-top: 50px;
+
+    &__pagination {
+      justify-content: center;
+    }
+
+    &__title {
+      margin-bottom: 60px;
+    }
+
+    &__item-description {
+      -webkit-line-clamp: 6;
+      line-clamp: 6;
+    }
+
+    &__prev,
+    &__next {
+      margin-top: 20px;
+    }
+
+    &__item {
+      margin-right: 10px;
+    }
+  }
+
+  .article {
+    &-modal {
+      &__images {
+        img {
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+      }
+
+      &__footer {
+        flex-direction: column;
+        place-items: start start;
+      }
+
+      &__desc {
+        font-size: 12px;
+      }
+    }
+  }
+
+}
+

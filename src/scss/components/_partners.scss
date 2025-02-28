@@ -1,0 +1,38 @@
+.partners {
+  margin-bottom: var(--section-margin);
+
+  &__slider-top {
+    margin-bottom: 20px;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius-md);
+    padding: 9px 20px;
+    width: 180px;
+    height: 83px;
+    background-color: var(--bg-cards);
+    transition: filter var(--transition-delay) var(--transition-function);
+
+
+    img {
+      filter: grayscale(1);
+    }
+
+    &:hover {
+      filter: none;
+    }
+  }
+}
+
+@include mobile {
+  .partners {
+    &__item {
+      padding: 9px 12px;
+      width: 108px;
+      height: 50px;
+    }
+  }
+}

@@ -1,0 +1,160 @@
+.qna {
+  --qna-animation-duration: var(--transition-delay);
+
+  margin-bottom: var(--section-margin);
+
+  &__grid {
+    display: grid;
+    align-items: start;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+    &.show-all .qna__item {
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--border-radius-md);
+    padding: 30px;
+    background-color: var(--bg-cards);
+    transition: var(--qna-animation-duration);
+
+    &:hover {
+      background-color: var(--color-form);
+
+      .qna__spoiler {
+        background-color: var(--color-primary);
+
+        svg {
+          stroke: var(--color-light);
+        }
+      }
+    }
+
+    &:not(.js-details)[open],
+    &.is-open {
+      position: relative;
+
+      .qna__spoiler {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__question {
+    position: relative;
+    list-style: none;
+    padding-right: calc(51px + 42px);
+    font-size: 18px;
+    line-height: 140%;
+    cursor: pointer;
+    user-select: none;
+
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+  }
+
+  &__spoiler {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 50%;
+    padding: 0;
+    width: 51px;
+    height: 51px;
+    background-color: var(--bg-form-select);
+    pointer-events: none;
+
+    svg {
+      width: 26px;
+      height: 26px;
+      stroke: var(--color-primary);
+    }
+  }
+
+  &__answer {
+    .js-details & {
+      overflow: hidden;
+      max-height: 0;
+      animation: slideUp var(--qna-animation-duration);
+    }
+
+    .js-details.is-open & {
+      max-height: none;
+      animation: slideDown var(--qna-animation-duration);
+    }
+
+    .js-details.is-open.is-animating & {
+      max-height: var(--qna-details-height);
+    }
+  }
+
+  &__text {
+    padding-top: 30px;
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      text-decoration: underline;
+      color: var(--color-primary);
+      text-underline-offset: 3px;
+    }
+  }
+
+  &__btn-more {
+    display: none;
+  }
+}
+
+@include small-tablet {
+  .qna {
+    &__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+@include mobile {
+  .qna {
+    &__grid {
+      margin-bottom: 30px;
+      gap: 10px;
+    }
+
+    &__item {
+      padding: 14px 20px;
+
+      &:nth-of-type(n + 5) {
+        display: none;
+        opacity: 0;
+      }
+    }
+
+    &__question {
+      font-size: 12px;
+    }
+
+    &__spoiler {
+      width: 33px;
+      height: 33px;
+
+      svg {
+        width: 18px;
+        height: 17px;
+      }
+    }
+
+    &__btn-more {
+      display: flex;
+      margin: auto;
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<section class="consult" id="s-consult">
+  <div class="container">
+    <form class="form form--light consult__form">
+      <div class="consult__title">Нужен индивидуальный комплект? Оставьте заявку на консультацию</div>
+      <div class="consult__description">Заполните форму, наш менеджер свяжется с вами в ближайшее время и поможет подобрать комплект</div>
+      <label for="" class="form-label">
+        <input type="text" name="name" id="consult-name" class="form-input consult-input input--name" placeholder="Ваше имя">
+      </label>
+      <div class="form-label">
+        <select name="type" id="consult-type" class="input--type">
+          <option value="" data-placeholder="true" selected disabled hidden>Какой тип объекта у вас? </option>
+          <option value="house">Частный дом</option>
+          <option value="appartment">Квартира</option>
+          <option value="dacha">Дача</option>
+          <option value="garage">Гараж, хозпостройка, двор</option>
+          <option value="lift">Лифт, придомовая территория, подъезд</option>
+          <option value="other">Другое (введите самостоятельно)</option>
+        </select>
+      </div>
+      <label for="consult-phone" class="form-label">
+        <input type="tel" name="phone" id="consult-phone" class="form-input consult-input input--tel" placeholder="Ваше номер телефона">
+      </label>
+      <div class="form-label">
+        <select name="consult-quantity" id="consult-quantity" class="input--qunatity">
+          <option value="" data-placeholder="true" selected disabled hidden>Сколько камер вам нужно?</option>
+          <option value="1">1 камера</option>
+          <option value="2">2 камеры</option>
+          <option value="3">3 камеры</option>
+          <option value="4">4 камеры</option>
+          <option value="more">Больше</option>
+        </select>
+      </div>
+      <div class="consult__actions">
+        <button type="submit" class="btn btn-primary">Получить консультацию</button>
+        <label for="consult-attach" class="form-label">
+          <button type="button" class="btn btn-attach"><svg>
+            <use xlink:href="img/sprite.svg#attach"></use>
+          </svg> Прикрепить файл</button>
+          <input type="file" name="attach" id="consult-attach">
+        </label>
+      </div>
+      <div class="form-group">
+        <label class="custom-checkbox consult__label-agree">
+          <input type="checkbox" name="agree" class="custom-checkbox__field" required>
+          <span class="custom-checkbox__content">Я согласен(на) на обработку персональных данных</span>
+        </label>
+      </div>
+    </form>
+  </div>
+</section>

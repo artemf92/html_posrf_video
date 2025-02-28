@@ -1,0 +1,77 @@
+<section class="map" id="s-map">
+  <h2 class="section-title map__title">Зоны обслуживания и офисы компании</h2>
+  <div class="container-fluid">
+    <div id="YaMap" class="map__yam"></div>
+    <a href="https://maps.yandex.ru/?ll=37.49,55.87&z=15" target="_blank" rel="nofollow" class="map__link">
+      <svg class="">
+        <use xlink:href="img/sprite.svg#yandex_map"></use>
+      </svg>
+      Перейти в Яндекс Карты
+    </a>
+  </div>
+</section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+      if (typeof window.YaMaps != 'undefined') {
+          window.YaMaps
+              .load()
+              .then(maps => {
+                  const popupContent = `
+                      <div class="map-popup" style="font-family: Arial, sans-serif; font-size: 14px; color: var(--color-primary); padding: 10px; background: #fff; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">
+                        <h3>Территория POS</h3>
+                        г. Москва, ул. Маршала Федоренко, дом 3, строение 1, этаж 4
+                      </div>
+                  `;
+
+                  const map = new maps.Map('YaMap', {
+                      center: [55.879011, 37.492725],
+                      zoom: 15,
+                      controls: []
+                  });
+
+
+                  const myPlacemark = new maps.Placemark([55.879011, 37.492725], {
+                      balloonContent: popupContent
+                  }, {
+                      iconLayout: 'default#image',
+                      iconImageHref: 'img/marker.png',
+                      iconImageSize: [230, 50],
+                      iconImageOffset: [-195, -50],
+                      balloonOffset: [0, -60],
+                      hideIconOnBalloonOpen: false
+                  });
+
+                  const zoomControl = new maps.control.ZoomControl({
+                      options: {
+                          size: 'small',
+                          position: {
+                              right: 10,
+                              top: 10
+                          }
+                      }
+                  });
+
+                  map.geoObjects.add(myPlacemark);
+                  map.controls.add(zoomControl);
+                  map.behaviors.disable(['scrollZoom', 'rightMouseButtonMagnifier']);
+
+                  if (window.innerWidth < 768) {
+                      map.behaviors.disable('drag');
+                      map.setZoom(14);
+                  }
+
+                  // if (window.innerWidth > 575) {
+                  //   myPlacemark.balloon.open();
+                  // }
+
+
+                  map.options.set({
+                      suppressMapOpenBlock: true,
+                      balloonPanelMaxMapArea: 0
+                  });
+              })
+              .catch(error => console.log('Ошибка загрузки карт: ', error));
+      }
+  });
+  </script>

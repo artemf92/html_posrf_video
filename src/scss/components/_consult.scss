@@ -1,0 +1,121 @@
+.consult {
+  margin-bottom: var(--section-margin);
+
+  &--dark {
+    .consult__form {
+      color: var(--color-light);
+      background-image: url('/img/camera-dark.svg');
+      background-color: var(--color-primary);
+    }
+  }
+
+  &__form {
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: var(--border-radius-md);
+    padding: 50px;
+    background-image: url('/img/camera.svg');
+    background-position: 100% 23px;
+    background-repeat: no-repeat;
+    background-color: var(--bg-cards);
+    gap: 20px;
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    max-width: 410px;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 130%;
+  }
+
+  &__description {
+    margin-bottom: 30px;
+    max-width: 305px;
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    button[type="submit"] {
+      padding: 20px 25px;
+      min-width: initial;
+    }
+  }
+}
+
+@include small-tablet {
+  .consult {
+    &__title {
+      order: -10;
+      font-size: 24px;
+    }
+
+    &__description {
+      order: -5;
+      font-size: 14px;
+    }
+
+    &__form {
+      grid-template-columns: 1fr;
+      padding: 40px;
+      gap: 15px;
+
+      & > .form-label:nth-of-type(1) {
+        order: -2;
+      }
+
+      & > .form-label:nth-of-type(2) {
+        order: -1;
+      }
+    }
+
+    &__actions {
+      order: 10;
+      gap: 15px;
+    }
+  }
+}
+
+@include mobile {
+  .consult {
+    &__title {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+
+    &__description {
+      margin-bottom: 20px;
+      font-size: 12px;
+    }
+
+    &__form {
+      padding: 30px;
+      background-image: none;
+      gap: 10px;
+    }
+
+    &__label-agree {
+      margin-top: 14px;
+      margin-bottom: 20px;
+    }
+
+    &__actions {
+      flex-direction: column-reverse;
+      align-items: start;
+      gap: 10px;
+
+      .btn {
+        width: 195px;
+      }
+
+      .btn-attach {
+        padding: 16px 30px;
+      }
+    }
+  }
+}

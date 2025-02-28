@@ -1,0 +1,167 @@
+<div class="calc">
+  <form class="form form--dark calc__form">
+    <h3 class="calc__title">Калькулятор стоимости системы видеонаблюдения</h3>
+    <div class="calc__description">Калькулятор позволяет оценить ориентировочную стоимость системы видеонаблюдения с установкой под ключ</div>
+    <div class="form-label">
+      <select name="calc-type" id="calc-type" class="input--type">
+        <option value="" data-placeholder="true" selected disabled hidden>Тип объекта</option>
+        <optgroup label="Частные лица">
+          <option value="house">Дом</option>
+          <option value="apart">Квартира</option>
+          <option value="dacha">Дача</option>
+          <option value="dvor">Двор, гараж, хоз. постройка</option>
+          <option value="lift">Лифт, подъезд</option>
+        </optgroup>
+        <optgroup label="Бизнес">
+          <option value="magaz">Магазин</option>
+          <option value="office">Офис</option>
+          <option value="cafe">Кафе, ресторан</option>
+          <option value="parking">Парковка</option>
+          <option value="hotel">Гостиничный комплекс</option>
+          <option value="baza">База отдыха</option>
+          <option value="fitness">Фитнес центр, спортивная арена</option>
+          <option value="aquapark">Аквапарк</option>
+          <option value="park">Парк, сквер, детская площадка</option>
+          <option value="apteka">Аптека</option>
+          <option value="kids_komplex">Детский игровой комплекс</option>
+          <option value="proizvodstvo">Производственное предприятие</option>
+        </optgroup>
+        <optgroup label="Гос. учреждения">
+          <option value="school">Школа</option>
+          <option value="hospital">Больница</option>
+          <option value="clinic">Поликлиника</option>
+          <option value="museum">Блиотека, музей</option>
+          <option value="admin">Административное здание</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="form-label">
+      <select name="calc-quantity" id="calc-quantity" class="input--quantity">
+        <option value="" data-placeholder="true" selected disabled hidden>Количество внутренних камер</option>
+        <option value="1_3">1-3 камеры</option>
+        <option value="4_10">4-10 камер</option>
+        <option value="10_30">10-30 камер</option>
+        <option value="more">Другое (введите самостоятельно)</option>
+      </select>
+    </div>
+    <label for="calc-square" class="form-label">
+      <input type="number" name="square" min="0" id="calc-square" class="form-input calc-input input--square" placeholder="Введите площадь объекта м²">
+    </label>
+    <div class="form-label">
+      <select name="calc-quantity-ext" id="calc-quantity-ext" class="input--quantity-ext">
+        <option value="" data-placeholder="true" selected disabled hidden>Количество внутренних камер</option>
+        <option value="1_3">1-3 камеры</option>
+        <option value="4_10">4-10 камер</option>
+        <option value="10_30">10-30 камер</option>
+        <option value="more">Другое (введите самостоятельно)</option>
+      </select>
+    </div>
+    <div class="form-label">
+      <select name="calc-archive" id="calc-archive" class="input--quantity">
+        <option value="" data-placeholder="true" selected disabled hidden>Способ хранения видео</option>
+        <option value="local">Локальный сервер (NVR, DVR)</option>
+        <option value="cloud">Облачное хранилище</option>
+        <option value="card">Карта памяти в камере</option>
+      </select>
+    </div>
+    <div class="form-label">
+      <select name="calc-period" id="calc-period" class="input--quantity">
+        <option value="" data-placeholder="true" selected disabled hidden>Время хранения записей</option>
+        <option value="3">3 дня</option>
+        <option value="7">7 дней</option>
+        <option value="14">14 дней</option>
+        <option value="30">30 дней</option>
+      </select>
+    </div>
+    <div class="calc__cpt">
+      <div class="form-group">
+        <span class="form-group__title">Выберите объем хранилища (жесткого диска):</span>
+        <label for="calc-size-1tb" class="custom-checkbox custom-checkbox--white custom-checkbox--radio">
+          <input type="radio" name="size" value="1tb" id="calc-size-1tb" class="custom-checkbox__field calc__input-size input--size" checked>
+          <span class="custom-checkbox__content">1 ТБ</span>
+        </label>
+        <label for="calc-size-2b" class="custom-checkbox custom-checkbox--white custom-checkbox--radio">
+          <input type="radio" name="size" value="2tb" id="calc-size-2tv" class="custom-checkbox__field calc__input-size input--size">
+          <span class="custom-checkbox__content">2 ТБ</span>
+        </label>
+        <label for="calc-size-4tb" class="custom-checkbox custom-checkbox--white custom-checkbox--radio">
+          <input type="radio" name="size" value="4tb" id="calc-size-4tb" class="custom-checkbox__field calc__input-size input--size">
+          <span class="custom-checkbox__content">4 ТБ</span>
+        </label>
+        <label for="calc-size-6tb" class="custom-checkbox custom-checkbox--white custom-checkbox--radio">
+          <input type="radio" name="size" value="6tb" id="calc-size-6tb" class="custom-checkbox__field calc__input-size input--size">
+          <span class="custom-checkbox__content">6 ТБ</span>
+        </label>
+      </div>
+      <div class="form-group">
+        <span class="form-group__title">Выберите качество изображения:</span>
+        <label for="calc-quality-1mpx" class="custom-checkbox custom-checkbox--white custom-checkbox--radio">
+          <input type="radio" name="quality" value="1mpx" id="calc-quality-1mpx" class="custom-checkbox__field calc__input-quality input--quality">
+          <span class="custom-checkbox__content">1 МП (1280×720px, HD)</span>
+        </label>
+        <label for="calc-quality-2mpx" class="custom-checkbox custom-checkbox--white custom-checkbox--radio">
+          <input type="radio" name="quality" value="2mpx" id="calc-quality-2mpx" class="custom-checkbox__field calc__input-quality input--quality">
+          <span class="custom-checkbox__content">2 МП (1920×1080px, FullHD)</span>
+        </label>
+        <label for="calc-quality-5mpx" class="custom-checkbox custom-checkbox--white custom-checkbox--radio">
+          <input type="radio" name="quality" value="4tb" id="calc-quality-5mpx" class="custom-checkbox__field calc__input-quality input--quality">
+          <span class="custom-checkbox__content">5 МП (2560×1944px, FullHD)</span>
+        </label>
+      </div>
+    </div>
+    <div class="calc__dops-col">
+      <div class="form-group">
+        <span class="form-group__title">Дополнительные опции:</span>
+        <label class="custom-checkbox custom-checkbox--white">
+          <input type="checkbox" name="dop[wifi]" class="custom-checkbox__field">
+          <span class="custom-checkbox__content">Wi-Fi роутер с USB модемом</span>
+        </label>
+        <label class="custom-checkbox custom-checkbox--white">
+          <input type="checkbox" name="dop[case]" class="custom-checkbox__field">
+          <span class="custom-checkbox__content">Шкаф для оборудования</span>
+        </label>
+        <label class="custom-checkbox custom-checkbox--white">
+          <input type="checkbox" name="dop[mic]" class="custom-checkbox__field">
+          <span class="custom-checkbox__content">Дополнительный микрофон</span>
+        </label>
+        <label class="custom-checkbox custom-checkbox--white">
+          <input type="checkbox" name="dop[monitor19]" class="custom-checkbox__field">
+          <span class="custom-checkbox__content">Монитор 19,5 дюйма</span>
+        </label>
+        <label class="custom-checkbox custom-checkbox--white">
+          <input type="checkbox" name="dop[tv32]" class="custom-checkbox__field">
+          <span class="custom-checkbox__content">Телевизор 32 дюйма</span>
+        </label>
+      </div>
+    </div>
+    <div class="calc__footer">
+      <div class="calc__message-order">Оставьте заявку на индивидуальный подбор оборудования или свяжитесь с нами:</div>
+      <div class="calc__actions">
+        <button class="btn btn-secondary calc__submit-btn" data-result="">Оставить заявку на монтаж</button>
+        <a href="#" class="btn btn-icon calc__social-link" aria-label="Напишите нам в Telegramm">
+          <svg class="">
+            <use xlink:href="img/sprite.svg#social-tg"></use>
+          </svg>
+        </a>
+        <a href="#" class="btn btn-icon calc__social-link" aria-label="Напишите нам в WhatsApp">
+          <svg class="">
+            <use xlink:href="img/sprite.svg#social-wa"></use>
+          </svg>
+        </a>
+      </div>
+    </div>
+    <div class="calc__result">
+      <div class="calc__result-title">Стоимость комплекта оборудования:</div>
+      <div class="calc__price" id="result-komplekt">от 20 000 руб</div>
+      <div class="divider"></div>
+      <div class="calc__result-title">Стоимость монтажа и пусконаладки:</div>
+      <div class="calc__price" id="result-montazh">~ 20 000 руб</div>
+      <div class="divider"></div>
+      <div class="calc__result-title">Стоимость системы видеонаблюдения под ключ</div>
+      <div class="calc__price"id="result-system">от 20 000 руб</div>
+      <div class="divider"></div>
+      <div class="calc__total">Итого:</div>
+      <div class="calc__total-price"id="result-total">~ 60 000 руб</div>
+    </div>
+  </div>
+</div>
