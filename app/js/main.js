@@ -21920,43 +21920,32 @@ class AF {
     const _this = e.target;
     _this.parentElement.click();
   };
-
-  // animateSlidersOnScrollMobile = () => {
-  //   if (!isMobile()) return;
-
-  //   const animateElements = document.querySelectorAll('.animate-touch');
-
-  //   if (!('IntersectionObserver' in window)) {
-  //     console.warn('Intersection Observer не поддерживается в этом браузере.');
-  //     return;
-  //   }
-
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-  //           setTimeout(() => {
-  //             entry.target.classList.add('animate-started');
-
-  //             setTimeout(() => {
-  //               entry.target.classList.add('animate-finished')
-  //             }, 2000);
-
-  //             observer.unobserve(entry.target);
-  //           }, 500);
-  //         }
-  //       });
-  //     },
-  //     {
-  //       rootMargin: '0px 0px -100px 0px',
-  //     }
-  //   );
-
-  //   animateElements.forEach((element) => {
-  //     observer.observe(element);
-  //   });
-  // }
-
+  animateSlidersOnScrollMobile = () => {
+    if (!(0,_functions_check_viewport_js__WEBPACK_IMPORTED_MODULE_0__.isMobile)()) return;
+    const animateElements = document.querySelectorAll('.animate-touch');
+    if (!('IntersectionObserver' in window)) {
+      console.warn('Intersection Observer не поддерживается в этом браузере.');
+      return;
+    }
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.classList.add('animate-started');
+            setTimeout(() => {
+              entry.target.classList.add('animate-finished');
+            }, 2000);
+            observer.unobserve(entry.target);
+          }, 500);
+        }
+      });
+    }, {
+      rootMargin: '0px 0px -100px 0px'
+    });
+    animateElements.forEach(element => {
+      observer.observe(element);
+    });
+  };
   initialMobilePartnersSlider = () => {
     if (!(0,_functions_check_viewport_js__WEBPACK_IMPORTED_MODULE_0__.isMobile)()) return;
     const sliderTop = document.querySelector('.partners__slider-top .swiper-wrapper');
