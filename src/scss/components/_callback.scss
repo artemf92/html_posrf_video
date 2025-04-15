@@ -19,7 +19,7 @@
     background-image: url('/img/camera.svg');
     background-position: 100% 23px;
     background-repeat: no-repeat;
-    background-color: var(--bg-cards);
+    background-color: var(--bg-form-blue);
     gap: 20px;
   }
 
@@ -65,10 +65,11 @@
 
     &__form {
       display: grid;
-      grid-template-columns: [start] minmax(208px, 416px) minmax(208px, 416px) 1fr [end];
+      padding: 40px 30px;
+      grid-template-columns: [start] minmax(208px, 416px) minmax(208px, 416px) auto [end];
       border-radius: var(--border-radius-md);
       color: var(--color-light);
-      background-color: var(--color-primary) !important;
+      background-color: var(--bg-form-blue);
       gap: 28px 20px;
     }
 
@@ -265,4 +266,8 @@
       // margin-bottom: 50px;
     }
   }
+}
+
+.choose+.callback {
+  margin-top: -45px;
 }

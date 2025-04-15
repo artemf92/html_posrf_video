@@ -3,6 +3,28 @@
 
   margin-bottom: var(--section-margin);
 
+  &__header {
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  &__header-left {
+    max-width: 700px;
+  }
+
+  &__title {
+    text-align: left;
+  }
+
+  &__subtitle {
+    text-align: left;
+    margin: 0;
+  }
+
   &__wrapper {
     margin: auto;
     padding: 0 var(--container-offset);
@@ -29,8 +51,9 @@
     border-radius: var(--border-radius-md);
     padding: calc(4 * var(--examples-padding));
     width: calc(50% - var(--examples-padding));
-    background-color: var(--bg-cards);
+    background-color: var(--color-accent);
     gap: calc(5 * var(--examples-padding));
+    color: var(--color-primary);
   }
 
   &__name {
@@ -70,7 +93,7 @@
     justify-content: center;
     margin-bottom: 34px;
     border-radius: var(--border-radius-md);
-    background-color: var(--bg-cards);
+    background-color: var(--form-color-text);
   }
 
   &__inner-slider {
@@ -98,6 +121,12 @@
 
 @include small-tablet {
   .examples {
+    &__header-left {
+      max-width: initial;
+    }
+    &__header-right {
+      display: none;
+    }
     &__wrapper {
       padding-right: 0;
       padding-left: var(--examples-padding);
@@ -123,6 +152,16 @@
 
 @include mobile {
   .examples {
+    &__header {
+      margin-bottom: 30px;
+    }
+    &__title {
+      font-size: 25px;
+      margin-bottom: 30px;
+    }
+    &__subtitle {
+      font-size: 16px;
+    }
     &__left {
       padding: calc(3 * var(--examples-padding));
       gap: calc(3 * var(--examples-padding));

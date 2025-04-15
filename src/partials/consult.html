@@ -1,37 +1,22 @@
-<section class="consult" id="s-consult">
+<section class="consult" id="s-consult" style="background-image: url('./img/consult-bg1.png');">
   <div class="container">
-    <form class="form form--light consult__form">
-      <div class="consult__title">Нужен индивидуальный комплект? Оставьте заявку на консультацию</div>
-      <div class="consult__description">Заполните форму, наш менеджер свяжется с вами в ближайшее время и поможет подобрать комплект</div>
+    <form class="form consult__form">
+      <div class="consult__title">Не нашли ответ на свой вопрос? Оставьте заявку на бесплатную консультацию</div>
+      <div class="consult__description">Заполните форму, менеджер свяжется с вами в ближайшее время и поможет ответить на вопрос</div>
       <label for="" class="form-label">
         <input type="text" name="name" id="consult-name" class="form-input consult-input input--name" placeholder="Ваше имя">
       </label>
-      <div class="form-label">
-        <select name="type" id="consult-type" class="input--type">
-          <option value="" data-placeholder="true" selected disabled hidden>Какой тип объекта у вас? </option>
-          <option value="house">Частный дом</option>
-          <option value="appartment">Квартира</option>
-          <option value="dacha">Дача</option>
-          <option value="garage">Гараж, хозпостройка, двор</option>
-          <option value="lift">Лифт, придомовая территория, подъезд</option>
-          <option value="other">Другое (введите самостоятельно)</option>
-        </select>
-      </div>
+      <label for="" class="form-label">
+        <input type="email" name="email" id="consult-email" class="form-input consult-input input--email" placeholder="Ваш email">
+      </label>
       <label for="consult-phone" class="form-label">
         <input type="tel" name="phone" id="consult-phone" class="form-input consult-input input--tel" placeholder="Ваше номер телефона">
       </label>
-      <div class="form-label">
-        <select name="consult-quantity" id="consult-quantity" class="input--qunatity">
-          <option value="" data-placeholder="true" selected disabled hidden>Сколько камер вам нужно?</option>
-          <option value="1">1 камера</option>
-          <option value="2">2 камеры</option>
-          <option value="3">3 камеры</option>
-          <option value="4">4 камеры</option>
-          <option value="more">Больше</option>
-        </select>
-      </div>
+      <label for="consult-question" class="form-label">
+        <textarea rows="1" name="question" id="consult-question" class="form-input consult-input input--question" placeholder="Ваш вопрос"></textarea>
+      </label>
       <div class="consult__actions">
-        <button type="submit" class="btn btn-primary">Получить консультацию</button>
+        <button type="submit" class="btn btn-secondary">Получить консультацию</button>
         <label for="consult-attach" class="form-label">
           <button type="button" class="btn btn-attach"><svg>
             <use xlink:href="img/sprite.svg#attach"></use>

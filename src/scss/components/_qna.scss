@@ -1,5 +1,5 @@
 .qna {
-  --qna-animation-duration: var(--transition-delay);
+  --qna-animation-duration: var(--transition-func);
 
   margin-bottom: var(--section-margin);
 
@@ -20,17 +20,19 @@
     flex-direction: column;
     border-radius: var(--border-radius-md);
     padding: 30px;
-    background-color: var(--bg-cards);
+    background-color: var(--color-accent);
     transition: var(--qna-animation-duration);
+    color: var(--color-primary);
 
     &:hover {
-      background-color: var(--color-form);
+      background-color: var(--color-light);
+      color: var(--color-primary);
 
       .qna__spoiler {
-        background-color: var(--color-primary);
+        background-color: var(--color-accent);
 
         svg {
-          stroke: var(--color-light);
+          stroke: var(--color-primary);
         }
       }
     }
@@ -68,13 +70,14 @@
     padding: 0;
     width: 51px;
     height: 51px;
-    background-color: var(--bg-form-select);
+    background-color: var(--form-color-text);
     pointer-events: none;
+    min-width: initial;
 
     svg {
       width: 26px;
       height: 26px;
-      stroke: var(--color-primary);
+      stroke: var(--color-accent);
     }
   }
 

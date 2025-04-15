@@ -1,0 +1,11 @@
+.presentation {
+  margin-bottom: var(--section-margin);
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--border-radius-md);
+    background-color: var(--form-color-text);
+  }
+}

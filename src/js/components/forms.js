@@ -113,7 +113,11 @@ export const afterSubmit = () => {
 }
 
 validateForms('.consult__form', consultRules, [], afterSubmit, globalConfig);
-validateForms('.about__form', aboutFormRules, [], afterSubmit, globalConfig);
-validateForms('.callback__form', callbackFormRules, [], afterSubmit, globalConfig);
+validateForms('.callback-modal__form', callbackFormRules, [], afterSubmit, globalConfig);
+validateForms('#callback-choose .callback-modal__form', callbackFormRules, [], afterSubmit, globalConfig);
+// validateForms('.about__form', aboutFormRules, [], afterSubmit, globalConfig);
 
-
+window.validateForms = validateForms;
+window.validateFormsRules = rules;
+window.validateFormsAfterSubmit = afterSubmit;
+window.validateFormsGlobalConfig = globalConfig;

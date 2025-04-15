@@ -13,9 +13,18 @@
   &__item-top {
     display: grid;
     align-items: center;
-    grid-template-columns: 90px 1fr;
+    // grid-template-columns: 90px 1fr;
+    grid-template-columns: 1fr;
     margin-bottom: 30px;
     gap: 10px 20px;
+
+    &.has-image {
+      grid-template-columns: 90px 1fr;
+
+      .reviews__date {
+        grid-column: 2 / 3;
+      }
+    }
   }
 
   &__item-name {
@@ -28,7 +37,6 @@
   }
 
   &__date {
-    grid-column: 2 / 3;
     grid-row: 2 / 3;
     font-size: 12px;
     line-height: 140%;

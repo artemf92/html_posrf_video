@@ -13,12 +13,14 @@
     padding: 9px 20px;
     width: 180px;
     height: 83px;
-    background-color: var(--bg-cards);
+    background-color: var(--form-color-text);
     transition: filter var(--transition-delay) var(--transition-function);
+    background-color: #f7f7f7;
 
 
     img {
       filter: grayscale(1);
+      // mix-blend-mode: color-burn;
     }
 
     &:hover {

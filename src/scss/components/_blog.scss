@@ -1,5 +1,28 @@
 .blog {
   margin-bottom: var(--section-margin);
+  position: relative;
+
+  &__title {
+    text-align: left;
+    margin: 0 0 50px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  &__header-left {
+    max-width: 760px;
+  }
+
+  &__slider {
+    .blog__pagination {
+      display: none;
+    }
+  }
 
   &__slide {
     max-width: 380px;
@@ -9,6 +32,7 @@
     display: flex;
     flex-direction: column;
     align-items: start;
+    background-color: var(--form-color-text);
     gap: 30px;
   }
 
@@ -146,3 +170,25 @@
 
 }
 
+@include tablet {
+  .blog {
+    &__header {
+      .blog__pagination {
+        display: none;
+      }
+    }
+    &__slider {
+      .blog__pagination {
+        display: flex;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .blog {
+    &__title {
+      margin-bottom: 30px;
+    }
+  }
+}

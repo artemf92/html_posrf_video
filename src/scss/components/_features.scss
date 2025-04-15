@@ -16,6 +16,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      background-color: var(--form-color-text);
     }
 
     &--big:nth-of-type(odd) {

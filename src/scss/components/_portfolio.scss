@@ -163,6 +163,9 @@
   }
 
   &__modal {
+    padding: 50px 40px !important;
+    max-height: 80vh;
+    overflow: auto;
     p {
       margin-top: 0;
     }
@@ -172,6 +175,11 @@
       grid-template-columns: repeat(2, 1fr);
       margin-bottom: 30px;
       gap: 20px;
+
+      img {
+        border-radius: var(--border-radius-md);
+        overflow: hidden;
+      }
     }
 
     &-desc {
@@ -183,9 +191,8 @@
 
     &-footer {
       display: flex;
-      flex-flow: row-reverse wrap;
+      flex-flow: row wrap;
       align-items: center;
-      justify-content: space-between;
       gap: 20px;
     }
   }

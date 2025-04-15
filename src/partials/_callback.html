@@ -1,0 +1,36 @@
+<section class="callback callback--dark" id="s-callback">
+  <div class="container">
+    <form class="form form--dark callback__form">
+      <div class="callback__title callback__title--desktop">Нужен индивидуальный комплект? Оставьте заявку на консультацию</div>
+      <div class="callback__title callback__title--mobile">Не нашли ответ на свой вопрос? Оставьте заявку на бесплатную консультацию</div>
+      <div class="callback__description">Заполните форму, наш менеджер свяжется с вами в ближайшее время и поможет подобрать комплект</div>
+      <label for="" class="form-label">
+        <input type="text" name="name" id="callback-name" class="form-input callback-input input--name" placeholder="Ваше имя">
+      </label>
+      <label for="" class="form-label">
+        <input type="email" name="email" id="callback-email" class="form-input callback-input input--email" placeholder="Ваш Email">
+      </label>
+      <label for="callback-phone" class="form-label">
+        <input type="tel" name="phone" id="callback-phone" class="form-input callback-input input--tel" placeholder="Ваш номер телефона">
+      </label>
+      <label for="" class="form-label">
+        <input type="text" name="question" id="callback-question" class="form-input callback-input" placeholder="Ваш вопрос">
+      </label>
+      <div class="callback__actions">
+        <button type="submit" class="btn btn-secondary">Получить консультацию</button>
+        <label for="callback-attach" class="form-label">
+          <button type="button" class="btn btn-attach"><svg>
+            <use xlink:href="img/sprite.svg#attach"></use>
+          </svg> Прикрепить файл</button>
+          <input type="file" name="attach" id="callback-attach">
+        </label>
+      </div>
+      <div class="form-label">
+        <label class="custom-checkbox custom-checkbox--white callback__label-agree">
+          <input type="checkbox" name="agree" class="custom-checkbox__field" required>
+          <span class="custom-checkbox__content">Я согласен(на) на обработку персональных данных</span>
+        </label>
+      </div>
+    </form>
+  </div>
+</section>

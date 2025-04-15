@@ -47,3 +47,42 @@ export const selectOptions = {
     }
   }
 };
+export const chooseTabOptions = {
+  settings: {
+    openDirection: 'down',
+    searchEnable: false,
+    classNames: {
+      select: 'form-select',
+      dropdown: 'form-select-dropdown',
+      option: 'form-select-option',
+      optionGroup: "form-optionGroup",
+      optionGroupLabel: "form-optionGroup-label",
+      optionGroupExpandInput: "form-optionGroup-expandInput",
+      optionGroupListing: "form-optionGroup-listing",
+    }
+  },
+  events: {
+    afterOpen: () => {
+      const openedSelector = document.querySelector('.form-select-dropdown.cs-open-down');
+      const optionGroup = openedSelector?.querySelectorAll('.form-optionGroup');
+
+      if (!optionGroup?.length) return;
+
+      optionGroup.forEach(g => {
+        const input = g.querySelector('.form-optionGroup-expandInput');
+
+        input.checked = false;
+      })
+    },
+    afterChange: (newVal, select) => {
+      if (window.innerWidth > 575) return;
+      const container = select.csSelect.parentElement.parentElement;
+
+      container.querySelectorAll('[data-tab]').forEach(tab => {
+        tab.style.display = 'none';
+      })
+
+      document.querySelector('[data-tab="'+newVal+'"]').style.display = 'flex';
+    }
+  }
+};

@@ -1,5 +1,5 @@
 .footer {
-  padding-bottom: calc(var(--section-margin) / 2);
+  padding: calc(var(--section-margin) / 2) 0 32px;
 
   &__wrap {
     display: grid;
@@ -11,6 +11,7 @@
   &__logo {
     grid-column: start / left;
     grid-row: 1 / 2;
+    // margin-bottom: 24px;
   }
 
   &__left {
@@ -35,11 +36,10 @@
   }
 
   &__workhours {
-    max-width: 123px;
     font-weight: 500;
     font-size: 14px;
     line-height: 140%;
-    color: var(--color-primary);
+    color: var(--color-light);
   }
 
   &__nav-title {
@@ -121,17 +121,16 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin-bottom: 40px;
     gap: 10px;
 
     .btn {
       display: block;
       width: 40px;
       height: 40px;
-      background-color: var(--color-primary);
+      background-color: var(--color-accent);
 
       svg {
-        fill: var(--color-light);
+        fill: var(--color-primary);
       }
     }
   }
@@ -159,6 +158,9 @@
     &:hover, &:focus {
       color: var(--color-primary);
     }
+  }
+  &__address {
+    max-width: 222px;
   }
 
   .divider {
@@ -346,8 +348,16 @@
 
 @include mobile {
   .footer {
+    &__workhours {
+      color: var(--color-accent);
+    }
     &__address {
       max-width: 227px;
+    }
+
+    &__btn-calc {
+      min-width: 200px;
+      text-align: center;
     }
   }
 }

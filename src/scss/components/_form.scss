@@ -36,6 +36,7 @@
   input[type="email"],
   input[type="number"],
   textarea {
+    background-color: var(--form-color-text);
     border: none;
     border-radius: var(--border-radius-md);
     padding: 20px 30px;
@@ -51,7 +52,8 @@
     textarea {
       font-weight: 500;
       font-size: 14px;
-      background-color: var(--bg-form-select);
+      background-color: var(--form-color-text);
+      color: var(--color-light);
 
       &:focus-visible,
       &:active, &:focus {
@@ -89,7 +91,7 @@
     input[type="number"],
     textarea {
       color: var(--color-light);
-      background-color: var(--bg-form-blue);
+      background-color: var(--color-primary);
 
       &::placeholder {
         font-size: 14px;
@@ -128,6 +130,7 @@
     position: relative;
     border: none;
     border-radius: var(--border-radius-md);
+    background-color: var(--form-color-text);
     padding: 0;
     line-height: 1;
 
@@ -170,7 +173,7 @@
 
       &:not(.cs-placeholder) {
         color: var(--color-light);
-        background-color: var(--color-primary);
+        background-color: var(--form-color-text);
 
         & + .cs-arrow {
           background-image: url("data:image/svg+xml,%0A%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.9999 3.33326L1.99994 3.33326C1.87845 3.33364 1.75936 3.36715 1.65549 3.43018C1.55162 3.49321 1.46691 3.58337 1.41048 3.69096C1.35404 3.79856 1.32802 3.9195 1.33521 4.04078C1.3424 4.16207 1.38252 4.27909 1.45128 4.37926L7.45128 13.0459C7.69994 13.4053 8.29861 13.4053 8.54794 13.0459L14.5479 4.37926C14.6174 4.2793 14.6581 4.16222 14.6657 4.04073C14.6733 3.91925 14.6474 3.79801 14.5909 3.69019C14.5344 3.58237 14.4495 3.49209 14.3453 3.42917C14.2411 3.36624 14.1217 3.33307 13.9999 3.33326Z' fill='white'/%3E%3C/svg%3E%0A");

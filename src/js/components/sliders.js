@@ -169,3 +169,5 @@ const blogSlider = new Swiper('.blog__slider', {
     prevEl: '.btn-prev',
   },
 });
+
+window.Swiper = Swiper;
