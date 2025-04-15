@@ -91,7 +91,7 @@ class AF {
     this.btnsChoose.forEach( el => el.addEventListener('click', this.setChooseFormType));
     this.menuClose.addEventListener('click', this.closeMenu);
     document.addEventListener('DOMContentLoaded', this.animateSlidersOnScrollMobile);
-    window.addEventListener('resize', this.checkResize);
+    // window.addEventListener('resize', this.checkResize);
     window.addEventListener('resize', this.debounce(this.checkMenuOverflow, 100));
   }
 
@@ -226,6 +226,7 @@ class AF {
   }
 
   checkResize = () => {
+    console.log('asdasd')
     setTimeout(() => {
       if (isMobile())
         document.location.reload();

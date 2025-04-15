@@ -21841,7 +21841,7 @@ class AF {
     this.btnsChoose.forEach(el => el.addEventListener('click', this.setChooseFormType));
     this.menuClose.addEventListener('click', this.closeMenu);
     document.addEventListener('DOMContentLoaded', this.animateSlidersOnScrollMobile);
-    window.addEventListener('resize', this.checkResize);
+    // window.addEventListener('resize', this.checkResize);
     window.addEventListener('resize', this.debounce(this.checkMenuOverflow, 100));
   };
   onLoad = () => {
@@ -21968,6 +21968,7 @@ class AF {
     sliderBottom?.remove();
   };
   checkResize = () => {
+    console.log('asdasd');
     setTimeout(() => {
       if ((0,_functions_check_viewport_js__WEBPACK_IMPORTED_MODULE_0__.isMobile)()) document.location.reload();
     }, 1000);
